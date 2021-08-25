@@ -49,5 +49,32 @@
         <item>UNMARRIED</item>
         <item>MARRIED</item>
     </string-array>
+    <string-array name="State">
+        <item>Select State</item>
+        <item>Andhra Pradesh</item>
+        <item>Assam</item>
+        <item>Bihar</item>
+        <item>Chhattisgarh </item>
+        <item>Goa</item>
+        <item>Gujarat</item>
+        <item>Haryana</item>
+        <item>Karnataka</item>
+        <item>Maharashtra</item>
+        <item>Manipur </item>
+        <item>Punjab</item>
+        <item>West Bengal</item>
+    </string-array>
+
+    <string-array name="dist">
+        <item>Select Districts</item>
+        <item>Alipurduar</item>
+        <item>Bankura</item>
+        <item>Birbhum</item>
+        <item>Cooch Behar</item>
+        <item>Dakshin Dinajpur</item>
+        <item>Darjeeling</item>
+        <item>Hooghly</item>
+        <item>Howra</item>
+    </string-array>
 
 </resources>
