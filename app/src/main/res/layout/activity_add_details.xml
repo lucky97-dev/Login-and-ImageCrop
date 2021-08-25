@@ -59,6 +59,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:visibility="visible"
+                        android:layout_margin="10dp"
                         android:orientation="vertical">
 
 
@@ -83,6 +84,43 @@
                                     android:layout_marginBottom="10dp"
                                     android:text="Present Address"
                                     android:textColor="#000" />
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <Spinner
+                                        android:layout_width="match_parent"
+                                        android:layout_height="48dp"
+                                        android:layout_margin="5dp"
+                                        android:background="@drawable/background_edittext"
+                                        android:backgroundTint="#e6e6e6"
+                                        android:entries="@array/Nationality"/>
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_baseline_arrow_drop_down_24"
+                                        android:layout_gravity="end|center_vertical"
+                                        android:layout_marginEnd="10dp"/>
+                                </FrameLayout>
+
+
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <Spinner
+                                        android:layout_width="match_parent"
+                                        android:layout_height="48dp"
+                                        android:layout_margin="5dp"
+                                        android:background="@drawable/background_edittext"
+                                        android:backgroundTint="#e6e6e6"
+                                        android:entries="@array/Nationality"/>
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_baseline_arrow_drop_down_24"
+                                        android:layout_gravity="end|center_vertical"
+                                        android:layout_marginEnd="10dp"/>
+                                </FrameLayout>
 
 
                                 <EditText
@@ -151,261 +189,6 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/primary_info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:orientation="vertical"
-                            android:visibility="gone">
-
-
-                            <EditText
-                                android:id="@+id/textName"
-                                android:layout_width="match_parent"
-                                android:layout_height="48dp"
-                                android:layout_margin="2dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/background_edittext"
-                                android:backgroundTint="#e6e6e6"
-                                android:hint="Address"
-                                tools:ignore="HardcodedText"
-                                android:nextFocusDown="@id/textVoterId"
-                                android:padding="5dp"
-                                android:singleLine="true"
-                                android:textColor="#000"
-                                android:textSize="14sp" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-
-                                <EditText
-                                    android:id="@+id/textVoterId"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="48dp"
-                                    android:layout_margin="2dp"
-                                    android:layout_weight="1"
-                                    android:background="@drawable/background_edittext"
-                                    android:backgroundTint="#e6e6e6"
-                                    android:enabled="true"
-                                    android:hint="Voter Id No"
-                                    android:nextFocusDown="@id/textPanCard"
-                                    android:padding="5dp"
-                                    android:singleLine="true"
-                                    android:textColor="#000"
-                                    android:textSize="14sp" />
-
-                                <EditText
-                                    android:id="@+id/textPanCard"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="48dp"
-                                    android:layout_margin="2dp"
-                                    android:layout_weight="1"
-                                    android:background="@drawable/background_edittext"
-                                    android:backgroundTint="#e6e6e6"
-                                    android:enabled="true"
-                                    android:hint="Pan Card No"
-                                    android:nextFocusDown="@id/textAadharCard"
-                                    android:padding="5dp"
-                                    android:singleLine="true"
-                                    android:textColor="#000"
-                                    android:textSize="14sp" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <EditText
-                                    android:id="@+id/textAadharCard"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="48dp"
-                                    android:layout_margin="2dp"
-                                    android:layout_weight="1"
-                                    android:background="@drawable/background_edittext"
-                                    android:backgroundTint="#e6e6e6"
-                                    android:enabled="true"
-                                    android:hint="Aadhar Card No"
-                                    android:padding="5dp"
-                                    android:singleLine="true"
-                                    android:textColor="#000"
-                                    android:textSize="14sp" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <Spinner
-                                    android:id="@+id/gender"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="2dp"
-                                    android:layout_weight="1"
-                                    android:padding="5dp"
-                                    android:entries="@array/sex"
-                                    android:nextFocusDown="@id/religion" />
-
-                                <Spinner
-                                    android:id="@+id/religion"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="2dp"
-                                    android:layout_weight="1"
-                                    android:entries="@array/Religion"
-                                    android:nextFocusDown="@id/nationality" />
-
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <Spinner
-                                    android:id="@+id/nationality"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="2dp"
-                                    android:layout_weight="1"
-                                    android:entries="@array/Nationality"
-                                    android:nextFocusDown="@id/maritalStatus"
-                                    android:padding="5dp" />
-
-                                <Spinner
-                                    android:id="@+id/maritalStatus"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="2dp"
-                                    android:layout_weight="1"
-                                    android:entries="@array/Marital_Status" />
-
-
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <EditText
-                                    android:id="@+id/textDesignation"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="48dp"
-                                    android:layout_margin="2dp"
-                                    android:layout_weight="1"
-                                    android:background="@drawable/background_edittext"
-                                    android:backgroundTint="#e6e6e6"
-                                    android:hint="Designation"
-                                    android:nextFocusDown="@id/textEducational_Qualification"
-                                    android:padding="5dp"
-                                    android:singleLine="true"
-                                    android:textColor="#000"
-                                    android:textSize="14sp"
-                                    android:importantForAutofill="no" />
-
-
-                                <EditText
-                                    android:id="@+id/textEducational_Qualification"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="48dp"
-                                    android:layout_margin="2dp"
-                                    android:layout_weight="1"
-                                    android:background="@drawable/background_edittext"
-                                    android:backgroundTint="#e6e6e6"
-                                    android:hint="Educational Qualification"
-                                    android:nextFocusDown="@id/textVacancy_Status"
-                                    android:padding="5dp"
-                                    android:singleLine="true"
-                                    android:textColor="#000"
-                                    android:textSize="14sp" />
-
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-
-                                <EditText
-                                    android:id="@+id/textVacancy_Status"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="48dp"
-                                    android:layout_margin="2dp"
-                                    android:layout_weight="1"
-                                    android:background="@drawable/background_edittext"
-                                    android:backgroundTint="#e6e6e6"
-                                    android:hint="Vacancy Status"
-                                    android:nextFocusDown="@id/textphysically_handicapped"
-                                    android:padding="5dp"
-                                    android:singleLine="true"
-                                    android:textColor="#000"
-                                    android:textSize="14sp" />
-
-                                <EditText
-                                    android:id="@+id/textphysically_handicapped"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="48dp"
-                                    android:layout_margin="2dp"
-                                    android:layout_weight="1"
-                                    android:background="@drawable/background_edittext"
-                                    android:backgroundTint="#e6e6e6"
-                                    android:hint="Physically handicapped"
-                                    android:nextFocusDown="@id/textDate_of_Joining"
-                                    android:padding="5dp"
-                                    android:singleLine="true"
-                                    android:textColor="#000"
-                                    android:textSize="14sp" />
-
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <EditText
-                                    android:id="@+id/textDate_of_Joining"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="48dp"
-                                    android:layout_margin="2dp"
-                                    android:layout_weight="1"
-                                    android:background="@drawable/background_edittext"
-                                    android:backgroundTint="#e6e6e6"
-                                    android:hint="Date of Joining"
-                                    android:inputType="time"
-                                    android:nextFocusDown="@id/textDate_of_Retire_Termination"
-                                    android:padding="5dp"
-                                    android:singleLine="true"
-                                    android:textColor="#000"
-                                    android:textSize="14sp" />
-
-                                <EditText
-                                    android:id="@+id/textDate_of_Retire_Termination"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="48dp"
-                                    android:layout_margin="2dp"
-                                    android:layout_weight="1"
-                                    android:background="@drawable/background_edittext"
-                                    android:backgroundTint="#e6e6e6"
-                                    android:hint="Date of Retire / Termination"
-                                    android:padding="5dp"
-                                    android:singleLine="true"
-                                    android:textColor="#000"
-                                    android:textSize="14sp" />
-
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
                             android:id="@+id/linearLayoutPersonalInfo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -413,186 +196,175 @@
                             android:orientation="vertical"
                             android:visibility="gone">
 
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:text="Father Name"
+                                android:textStyle="bold"/>
+
+                            <EditText
+                                android:id="@+id/textFatherName"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/background_edittext"
+                                android:backgroundTint="#e6e6e6"
+                                android:hint="Father name"
+                                android:nextFocusDown="@id/textMotherName"
+                                android:padding="5dp"
+                                android:singleLine="true"
+                                android:textColor="#000"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:textStyle="bold"
+                                android:layout_margin="2dp"
+                                android:text="Mother name"/>
+
+                            <EditText
+                                android:id="@+id/textMotherName"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/background_edittext"
+                                android:backgroundTint="#e6e6e6"
+                                android:hint="Mother Name"
+                                android:nextFocusDown="@id/textMotherTongue"
+                                android:padding="5dp"
+                                android:singleLine="true"
+                                android:textColor="#000"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:textStyle="bold"
+                                android:text="Gender"/>
+
+                            <RadioGroup
+                                android:id="@+id/textMotherTongue"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_gravity="center"
+                                    android:text="Male"/>
+
+                                <RadioButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_gravity="center"
+                                    android:text="Female"/>
+                            </RadioGroup>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Marital Status"/>
+
+                            <RadioGroup
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_gravity="center"
+                                    android:text="Married"/>
+
+                                <RadioButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_gravity="center"
+                                    android:text="Unmarried"/>
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/hobbies"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:layout_margin="5dp"
+                                android:text="Choose your hobbies:"/>
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
                                 android:orientation="vertical">
-                                <TextView
-                                    android:layout_width="match_parent"
+
+                                <CheckBox
+                                    android:id="@+id/chkReading"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_margin="5dp"
-                                    android:text="Father Name"
-                                    android:textStyle="bold"/>
-
-                                <EditText
-                                    android:id="@+id/textFatherName"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="48dp"
-                                    android:layout_margin="2dp"
-                                    android:layout_weight="1"
-                                    android:background="@drawable/background_edittext"
-                                    android:backgroundTint="#e6e6e6"
-                                    android:hint="Father name"
-                                    android:nextFocusDown="@id/textMotherName"
-                                    android:padding="5dp"
-                                    android:singleLine="true"
-                                    android:textColor="#000"
-                                    android:textSize="14sp" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
+                                    android:padding="10dp"
+                                    android:text="Reading" />
+                                <CheckBox
+                                    android:id="@+id/chkTelevision"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="5dp"
-                                    android:textStyle="bold"
-                                    android:layout_margin="2dp"
-                                    android:text="Mother name"/>
-                                <EditText
-                                    android:id="@+id/textMotherName"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="48dp"
-                                    android:layout_margin="2dp"
-                                    android:layout_weight="1"
-                                    android:background="@drawable/background_edittext"
-                                    android:backgroundTint="#e6e6e6"
-                                    android:hint="Mother Name"
-                                    android:nextFocusDown="@id/textMotherTongue"
-                                    android:padding="5dp"
-                                    android:singleLine="true"
-                                    android:textColor="#000"
-                                    android:textSize="14sp" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
+                                    android:padding="10dp"
+                                    android:text="Television" />
+                                <CheckBox
+                                    android:id="@+id/chkMusic"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="5dp"
-                                    android:textStyle="bold"
-                                    android:layout_margin="2dp"
-                                    android:text="Mother Tongue"/>
-                                <EditText
-                                    android:id="@+id/textMotherTongue"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="48dp"
-                                    android:layout_margin="2dp"
-                                    android:layout_weight="1"
-                                    android:background="@drawable/background_edittext"
-                                    android:backgroundTint="#e6e6e6"
-                                    android:hint="Mother tongue"
-                                    android:nextFocusDown="@id/textSpouseName"
-                                    android:padding="5dp"
-                                    android:singleLine="true"
-                                    android:textColor="#000"
-                                    android:textSize="14sp" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
+                                    android:padding="10dp"
+                                    android:text="Music" />
+                                <CheckBox
+                                    android:id="@+id/chkGames"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="5dp"
-                                    android:textStyle="bold"
-                                    android:layout_margin="2dp"
-                                    android:text="Spouse Name"/>
-
-                                <EditText
-                                    android:id="@+id/textSpouseName"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="48dp"
-                                    android:layout_weight="1"
-                                    android:background="@drawable/background_edittext"
-                                    android:backgroundTint="#e6e6e6"
-                                    android:hint="Spouse name"
-                                    android:nextFocusDown="@id/textSpouse_employed"
-                                    android:padding="5dp"
-                                    android:singleLine="true"
-                                    android:textColor="#000"
-                                    android:textSize="14sp" />
-                                <TextView
-                                    android:layout_width="match_parent"
+                                    android:padding="10dp"
+                                    android:text="Video Games" />
+                                <CheckBox
+                                    android:id="@+id/chkFishing"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="5dp"
-                                    android:textStyle="bold"
-                                    android:layout_margin="2dp"
-                                    android:text="Spouse Employed"/>
-
-                                <EditText
-                                    android:id="@+id/textSpouse_employed"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="48dp"
-                                    android:layout_margin="2dp"
-                                    android:layout_weight="1"
-                                    android:background="@drawable/background_edittext"
-                                    android:backgroundTint="#e6e6e6"
-                                    android:hint="Spouse employed"
-                                    android:nextFocusDown="@id/textDetailsOfEmployment"
-                                    android:padding="5dp"
-                                    android:singleLine="true"
-                                    android:textColor="#000"
-                                    android:textSize="14sp" />
-                                <TextView
-                                    android:layout_width="match_parent"
+                                    android:padding="10dp"
+                                    android:text="Fishing" />
+                                <CheckBox
+                                    android:id="@+id/chkEtc"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="5dp"
-                                    android:textStyle="bold"
-                                    android:layout_margin="2dp"
-                                    android:text="Details Of Employment"/>
+                                    android:padding="10dp"
+                                    android:text="ect" />
 
-                                <EditText
-                                    android:id="@+id/textDetailsOfEmployment"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="48dp"
-                                    android:layout_margin="2dp"
-                                    android:layout_weight="1"
-                                    android:background="@drawable/background_edittext"
-                                    android:backgroundTint="#e6e6e6"
-                                    android:hint="Details of employment"
-                                    android:nextFocusDown="@id/textSpouse_Pay"
-                                    android:padding="5dp"
-                                    android:singleLine="true"
-                                    android:textColor="#000"
-                                    android:textSize="14sp" />
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="5dp"
-                                    android:textStyle="bold"
-                                    android:layout_margin="2dp"
-                                    android:text="Spouse Pay"/>
-
-                                <EditText
-                                    android:id="@+id/textSpouse_Pay"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="48dp"
-                                    android:layout_margin="2dp"
-                                    android:layout_weight="1"
-                                    android:background="@drawable/background_edittext"
-                                    android:backgroundTint="#e6e6e6"
-                                    android:hint="Spouse pay"
-                                    android:nextFocusDown="@id/textSpouse_HRA"
-                                    android:padding="5dp"
-                                    android:singleLine="true"
-                                    android:textColor="#000"
-                                    android:textSize="14sp" />
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="5dp"
-                                    android:textStyle="bold"
-                                    android:layout_margin="2dp"
-                                    android:text="Spouse HRA"/>
-
-                                <EditText
-                                    android:id="@+id/textSpouse_HRA"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="48dp"
-                                    android:layout_margin="2dp"
-                                    android:layout_weight="1"
-                                    android:background="@drawable/background_edittext"
-                                    android:backgroundTint="#e6e6e6"
-                                    android:hint="Spouse hra"
-                                    android:padding="5dp"
-                                    android:singleLine="true"
-                                    android:textColor="#000"
-                                    android:textSize="14sp" />
                             </LinearLayout>
+
                         </LinearLayout>
+
+
 
 
 
@@ -626,7 +398,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:textColor="@android:color/holo_green_dark"
-                            android:textSize="30dp"
+                            android:textSize="30sp"
                             android:text="Successfully save!"/>
 
                     </LinearLayout>
@@ -660,7 +432,7 @@
             android:id="@+id/relativeLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="2dp"
+            android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:layout_editor_absoluteX="16dp">
 
