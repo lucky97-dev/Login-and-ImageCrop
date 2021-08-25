@@ -21,7 +21,7 @@
         </item>
         <item >
             <bitmap android:gravity="bottom|right"
-                android:src="@drawable/ic_arrow_drop_down_black_24dp"
+                android:src="@drawable/ic_baseline_arrow_drop_down_24"
                 android:tint="#131313"/>
 
         </item>

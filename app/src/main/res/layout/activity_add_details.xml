@@ -8,18 +8,19 @@
     android:background="#ffffff"
     tools:context=".AddDetails">
 
-        <com.example.demoapp.StepperIndicator
-            android:id="@+id/stepper_indicator"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:paddingTop="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView41"
-            app:stpi_labels="@array/stepLabels" />
+    <com.example.demoapp.StepperIndicator
+        android:id="@+id/stepper_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        android:paddingTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView41"
+        app:stpi_labels="@array/stepLabels" />
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -40,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-10dp"
                     android:gravity="center"
-                    android:text="Primary Info"
+                    android:text="Address"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +58,97 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:visibility="visible"
                         android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutResidentialInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="3dp"
+                                    android:layout_marginTop="3dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="Present Address"
+                                    android:textColor="#000" />
+
+
+                                <EditText
+                                    android:id="@+id/village_Present"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="48dp"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/background_edittext"
+                                    android:backgroundTint="#e6e6e6"
+                                    android:hint="Village / Town"
+                                    android:nextFocusDown="@id/post_Present"
+                                    android:padding="5dp"
+                                    android:singleLine="true"
+                                    android:textColor="#000"
+                                    android:textSize="14sp" />
+
+
+                                <EditText
+                                    android:id="@+id/post_Present"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="48dp"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/background_edittext"
+                                    android:backgroundTint="#e6e6e6"
+                                    android:hint="Post Office"
+                                    android:nextFocusDown="@id/police_Present"
+                                    android:padding="5dp"
+                                    android:singleLine="true"
+                                    android:textColor="#000"
+                                    android:textSize="14sp" />
+
+
+
+                                <EditText
+                                    android:id="@+id/police_Present"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="48dp"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/background_edittext"
+                                    android:backgroundTint="#e6e6e6"
+                                    android:hint="Police Station"
+                                    android:nextFocusDown="@id/pin_Present"
+                                    android:padding="5dp"
+                                    android:singleLine="true"
+                                    android:textColor="#000"
+                                    android:textSize="14sp" />
+
+
+                                <EditText
+                                    android:id="@+id/pin_Present"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="48dp"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/background_edittext"
+                                    android:backgroundTint="#e6e6e6"
+                                    android:hint="Pin"
+                                    android:padding="5dp"
+                                    android:singleLine="true"
+                                    android:textColor="#000"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+                        </LinearLayout>
 
                         <LinearLayout
                             android:id="@+id/primary_info"
@@ -65,18 +156,18 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:orientation="vertical"
-                            android:visibility="visible">
+                            android:visibility="gone">
 
 
                             <EditText
                                 android:id="@+id/textName"
                                 android:layout_width="match_parent"
-                                android:layout_height="45dp"
+                                android:layout_height="48dp"
                                 android:layout_margin="2dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/background_edittext"
                                 android:backgroundTint="#e6e6e6"
-                                android:hint="Full Name"
+                                android:hint="Address"
                                 tools:ignore="HardcodedText"
                                 android:nextFocusDown="@id/textVoterId"
                                 android:padding="5dp"
@@ -91,7 +182,7 @@
                                 <EditText
                                     android:id="@+id/textVoterId"
                                     android:layout_width="match_parent"
-                                    android:layout_height="45dp"
+                                    android:layout_height="48dp"
                                     android:layout_margin="2dp"
                                     android:layout_weight="1"
                                     android:background="@drawable/background_edittext"
@@ -107,7 +198,7 @@
                                 <EditText
                                     android:id="@+id/textPanCard"
                                     android:layout_width="match_parent"
-                                    android:layout_height="45dp"
+                                    android:layout_height="48dp"
                                     android:layout_margin="2dp"
                                     android:layout_weight="1"
                                     android:background="@drawable/background_edittext"
@@ -129,7 +220,7 @@
                                 <EditText
                                     android:id="@+id/textAadharCard"
                                     android:layout_width="match_parent"
-                                    android:layout_height="45dp"
+                                    android:layout_height="48dp"
                                     android:layout_margin="2dp"
                                     android:layout_weight="1"
                                     android:background="@drawable/background_edittext"
@@ -155,7 +246,6 @@
                                     android:layout_margin="2dp"
                                     android:layout_weight="1"
                                     android:padding="5dp"
-                                    android:background="@drawable/spinner_bg"
                                     android:entries="@array/sex"
                                     android:nextFocusDown="@id/religion" />
 
@@ -165,7 +255,6 @@
                                     android:layout_height="wrap_content"
                                     android:layout_margin="2dp"
                                     android:layout_weight="1"
-                                    android:background="@drawable/spinner_bg"
                                     android:entries="@array/Religion"
                                     android:nextFocusDown="@id/nationality" />
 
@@ -183,7 +272,6 @@
                                     android:layout_height="wrap_content"
                                     android:layout_margin="2dp"
                                     android:layout_weight="1"
-                                    android:background="@drawable/spinner_bg"
                                     android:entries="@array/Nationality"
                                     android:nextFocusDown="@id/maritalStatus"
                                     android:padding="5dp" />
@@ -194,7 +282,6 @@
                                     android:layout_height="wrap_content"
                                     android:layout_margin="2dp"
                                     android:layout_weight="1"
-                                    android:background="@drawable/spinner_bg"
                                     android:entries="@array/Marital_Status" />
 
 
@@ -207,7 +294,7 @@
                                 <EditText
                                     android:id="@+id/textDesignation"
                                     android:layout_width="match_parent"
-                                    android:layout_height="45dp"
+                                    android:layout_height="48dp"
                                     android:layout_margin="2dp"
                                     android:layout_weight="1"
                                     android:background="@drawable/background_edittext"
@@ -224,7 +311,7 @@
                                 <EditText
                                     android:id="@+id/textEducational_Qualification"
                                     android:layout_width="match_parent"
-                                    android:layout_height="45dp"
+                                    android:layout_height="48dp"
                                     android:layout_margin="2dp"
                                     android:layout_weight="1"
                                     android:background="@drawable/background_edittext"
@@ -248,7 +335,7 @@
                                 <EditText
                                     android:id="@+id/textVacancy_Status"
                                     android:layout_width="match_parent"
-                                    android:layout_height="45dp"
+                                    android:layout_height="48dp"
                                     android:layout_margin="2dp"
                                     android:layout_weight="1"
                                     android:background="@drawable/background_edittext"
@@ -263,7 +350,7 @@
                                 <EditText
                                     android:id="@+id/textphysically_handicapped"
                                     android:layout_width="match_parent"
-                                    android:layout_height="45dp"
+                                    android:layout_height="48dp"
                                     android:layout_margin="2dp"
                                     android:layout_weight="1"
                                     android:background="@drawable/background_edittext"
@@ -286,7 +373,7 @@
                                 <EditText
                                     android:id="@+id/textDate_of_Joining"
                                     android:layout_width="match_parent"
-                                    android:layout_height="45dp"
+                                    android:layout_height="48dp"
                                     android:layout_margin="2dp"
                                     android:layout_weight="1"
                                     android:background="@drawable/background_edittext"
@@ -302,7 +389,7 @@
                                 <EditText
                                     android:id="@+id/textDate_of_Retire_Termination"
                                     android:layout_width="match_parent"
-                                    android:layout_height="45dp"
+                                    android:layout_height="48dp"
                                     android:layout_margin="2dp"
                                     android:layout_weight="1"
                                     android:background="@drawable/background_edittext"
@@ -340,7 +427,7 @@
                                 <EditText
                                     android:id="@+id/textFatherName"
                                     android:layout_width="match_parent"
-                                    android:layout_height="45dp"
+                                    android:layout_height="48dp"
                                     android:layout_margin="2dp"
                                     android:layout_weight="1"
                                     android:background="@drawable/background_edittext"
@@ -362,7 +449,7 @@
                                 <EditText
                                     android:id="@+id/textMotherName"
                                     android:layout_width="match_parent"
-                                    android:layout_height="45dp"
+                                    android:layout_height="48dp"
                                     android:layout_margin="2dp"
                                     android:layout_weight="1"
                                     android:background="@drawable/background_edittext"
@@ -384,7 +471,7 @@
                                 <EditText
                                     android:id="@+id/textMotherTongue"
                                     android:layout_width="match_parent"
-                                    android:layout_height="45dp"
+                                    android:layout_height="48dp"
                                     android:layout_margin="2dp"
                                     android:layout_weight="1"
                                     android:background="@drawable/background_edittext"
@@ -407,7 +494,7 @@
                                 <EditText
                                     android:id="@+id/textSpouseName"
                                     android:layout_width="match_parent"
-                                    android:layout_height="45dp"
+                                    android:layout_height="48dp"
                                     android:layout_weight="1"
                                     android:background="@drawable/background_edittext"
                                     android:backgroundTint="#e6e6e6"
@@ -428,7 +515,7 @@
                                 <EditText
                                     android:id="@+id/textSpouse_employed"
                                     android:layout_width="match_parent"
-                                    android:layout_height="45dp"
+                                    android:layout_height="48dp"
                                     android:layout_margin="2dp"
                                     android:layout_weight="1"
                                     android:background="@drawable/background_edittext"
@@ -450,7 +537,7 @@
                                 <EditText
                                     android:id="@+id/textDetailsOfEmployment"
                                     android:layout_width="match_parent"
-                                    android:layout_height="45dp"
+                                    android:layout_height="48dp"
                                     android:layout_margin="2dp"
                                     android:layout_weight="1"
                                     android:background="@drawable/background_edittext"
@@ -472,7 +559,7 @@
                                 <EditText
                                     android:id="@+id/textSpouse_Pay"
                                     android:layout_width="match_parent"
-                                    android:layout_height="45dp"
+                                    android:layout_height="48dp"
                                     android:layout_margin="2dp"
                                     android:layout_weight="1"
                                     android:background="@drawable/background_edittext"
@@ -494,7 +581,7 @@
                                 <EditText
                                     android:id="@+id/textSpouse_HRA"
                                     android:layout_width="match_parent"
-                                    android:layout_height="45dp"
+                                    android:layout_height="48dp"
                                     android:layout_margin="2dp"
                                     android:layout_weight="1"
                                     android:background="@drawable/background_edittext"
@@ -507,294 +594,7 @@
                             </LinearLayout>
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:id="@+id/linearLayoutResidentialInfo"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:orientation="vertical"
-                            android:visibility="gone">
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="3dp"
-                                    android:layout_marginTop="3dp"
-                                    android:text="Present Address"
-                                    android:textColor="#000" />
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-                                    <Spinner
-                                        android:id="@+id/state"
-                                        style="@android:style/Widget.Material.Spinner.Underlined"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="45dp"
-                                        android:layout_margin="2dp"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/spinner_bg"
-                                        tools:ignore="NewApi" />
-
-                                    <Spinner
-                                        android:id="@+id/district"
-                                        style="@android:style/Widget.Material.Spinner.Underlined"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="45dp"
-                                        android:layout_margin="2dp"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/spinner_bg"
-                                        tools:ignore="NewApi" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-
-                                    <EditText
-                                        android:id="@+id/village_Present"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="45dp"
-                                        android:layout_margin="2dp"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/background_edittext"
-                                        android:backgroundTint="#e6e6e6"
-                                        android:hint="Village / Town"
-                                        android:nextFocusDown="@id/post_Present"
-                                        android:padding="5dp"
-                                        android:singleLine="true"
-                                        android:textColor="#000"
-                                        android:textSize="14sp" />
-
-
-                                    <EditText
-                                        android:id="@+id/post_Present"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="45dp"
-                                        android:layout_margin="2dp"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/background_edittext"
-                                        android:backgroundTint="#e6e6e6"
-                                        android:hint="Post Office"
-                                        android:nextFocusDown="@id/police_Present"
-                                        android:padding="5dp"
-                                        android:singleLine="true"
-                                        android:textColor="#000"
-                                        android:textSize="14sp" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-                                    <EditText
-                                        android:id="@+id/police_Present"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="45dp"
-                                        android:layout_margin="2dp"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/background_edittext"
-                                        android:backgroundTint="#e6e6e6"
-                                        android:hint="Police Station"
-                                        android:nextFocusDown="@id/pin_Present"
-                                        android:padding="5dp"
-                                        android:singleLine="true"
-                                        android:textColor="#000"
-                                        android:textSize="14sp" />
-
-
-                                    <EditText
-                                        android:id="@+id/pin_Present"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="45dp"
-                                        android:layout_margin="2dp"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/background_edittext"
-                                        android:backgroundTint="#e6e6e6"
-                                        android:hint="Pin"
-                                        android:nextFocusDown="@id/village_Permanent"
-                                        android:padding="5dp"
-                                        android:singleLine="true"
-                                        android:textColor="#000"
-                                        android:textSize="14sp" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="Permanent Address Same as Present Address"
-                                        android:textColor="#000" />
-
-                                    <CheckBox
-                                        android:id="@+id/samePermanentAddress"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-                                    <Spinner
-                                        android:id="@+id/statePermanent"
-                                        style="@android:style/Widget.Material.Spinner.Underlined"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="45dp"
-                                        android:layout_margin="2dp"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/spinner_bg"
-                                        tools:ignore="NewApi" />
-
-                                    <Spinner
-                                        android:id="@+id/districtPermanent"
-                                        style="@android:style/Widget.Material.Spinner.Underlined"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="45dp"
-                                        android:layout_margin="2dp"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/spinner_bg"
-                                        tools:ignore="NewApi" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-                                    <EditText
-                                        android:id="@+id/village_Permanent"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="45dp"
-                                        android:layout_margin="2dp"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/background_edittext"
-                                        android:backgroundTint="#e6e6e6"
-                                        android:hint="Village / Town"
-                                        android:nextFocusDown="@id/post_Permanent"
-                                        android:padding="5dp"
-                                        android:singleLine="true"
-                                        android:textColor="#000"
-                                        android:textSize="14sp" />
-
-
-                                    <EditText
-                                        android:id="@+id/post_Permanent"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="45dp"
-                                        android:layout_margin="2dp"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/background_edittext"
-                                        android:backgroundTint="#e6e6e6"
-                                        android:hint="Post Office"
-                                        android:nextFocusDown="@id/police_Permanent"
-                                        android:padding="5dp"
-                                        android:singleLine="true"
-                                        android:textColor="#000"
-                                        android:textSize="14sp" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-                                    <EditText
-                                        android:id="@+id/police_Permanent"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="45dp"
-                                        android:layout_margin="2dp"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/background_edittext"
-                                        android:backgroundTint="#e6e6e6"
-                                        android:hint="Police Station"
-                                        android:nextFocusDown="@id/pin_Permanent"
-                                        android:padding="5dp"
-                                        android:singleLine="true"
-                                        android:textColor="#000"
-                                        android:textSize="14sp" />
-
-                                    <EditText
-                                        android:id="@+id/pin_Permanent"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="45dp"
-                                        android:layout_margin="2dp"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/background_edittext"
-                                        android:backgroundTint="#e6e6e6"
-                                        android:hint="Pin"
-                                        android:padding="5dp"
-                                        android:singleLine="true"
-                                        android:textColor="#000"
-                                        android:textSize="14sp" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="3dp"
-                                        android:layout_marginTop="3dp"
-                                        android:text="Contact Details"
-                                        android:textColor="#000" />
-
-
-                                    <EditText
-                                        android:id="@+id/textMobileNumber"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="45dp"
-                                        android:layout_margin="2dp"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/background_edittext"
-                                        android:backgroundTint="#e6e6e6"
-                                        android:hint="Mobile No "
-                                        android:inputType="phone"
-                                        android:nextFocusDown="@id/textEmailId"
-                                        android:padding="5dp"
-                                        android:singleLine="true"
-                                        android:textColor="#000"
-                                        android:textSize="14sp" />
-
-
-                                    <EditText
-                                        android:id="@+id/textEmailId"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="45dp"
-                                        android:layout_margin="2dp"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/background_edittext"
-                                        android:backgroundTint="#e6e6e6"
-                                        android:hint="Email Id"
-                                        android:inputType="textEmailAddress"
-                                        android:padding="5dp"
-                                        android:singleLine="true"
-                                        android:textColor="#000"
-                                        android:textSize="14sp" />
-
-                                </LinearLayout>
-                            </LinearLayout>
-                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -847,7 +647,7 @@
             android:id="@+id/textView41"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:text="Add Details"
             android:textSize="25sp"
@@ -867,7 +667,7 @@
             <Button
                 android:id="@+id/saveButton"
                 android:layout_width="wrap_content"
-                android:layout_height="33dp"
+                android:layout_height="48dp"
                 android:layout_alignParentEnd="true"
                 android:background="#fdfdfd"
                 android:text="@string/next"
@@ -879,7 +679,7 @@
             <Button
                 android:id="@+id/cancelButton"
                 android:layout_width="wrap_content"
-                android:layout_height="33dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="15dp"
                 android:background="#fdfdfd"
                 android:text="@string/cancel"
