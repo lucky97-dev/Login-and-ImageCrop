@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_rotate"
+        android:icon="@drawable/crop_image_menu_rotate_right"
+        android:title="@string/crop_image_menu_rotate_right" />
+    <item android:id="@+id/action_flipH"
+        android:title="Flip Horizontal"
+        android:icon="@drawable/flip_horizontal" />
+    <item android:id="@+id/action_flipV"
+        android:title="Flip Vertical"
+        android:icon="@drawable/flip_vertical" />
+</menu>

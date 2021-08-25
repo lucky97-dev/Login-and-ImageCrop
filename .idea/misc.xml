@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/background_login.xml" value="0.26944444444444443" />
+        <entry key="app/src/main/res/drawable/button_background.xml" value="0.26944444444444443" />
+        <entry key="app/src/main/res/drawable/edit.xml" value="0.26944444444444443" />
+        <entry key="app/src/main/res/drawable/ic_close_black_24dp.xml" value="0.17395833333333333" />
+        <entry key="app/src/main/res/drawable/ic_lock_white_24dp.xml" value="0.26944444444444443" />
+        <entry key="app/src/main/res/drawable/login_edit_box.xml" value="0.26944444444444443" />
+        <entry key="app/src/main/res/drawable/new_login_gradients.xml" value="0.26944444444444443" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.30512820512820515" />
+        <entry key="app/src/main/res/layout/activity_registration.xml" value="0.2907692307692308" />
+        <entry key="app/src/main/res/layout/app_bar_layout.xml" value="0.2907692307692308" />
+        <entry key="app/src/main/res/layout/crop_image_activity.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/crop_image_view.xml" value="0.2953125" />
+        <entry key="app/src/main/res/menu/crop_image_menu.xml" value="0.2953125" />
+        <entry key="app/src/main/res/menu/menu_navigation_crop_image.xml" value="0.1578125" />
+        <entry key="app/src/main/res/menu/more_tab_menu.xml" value="0.24270833333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
