@@ -11,4 +11,43 @@
     <string name="crop_image_menu_flip_horizontally">Flip horizontally</string>
     <string name="crop_image_menu_flip_vertically">Flip vertically</string>
     <string name="pick_image_intent_chooser_title">Select source</string>
+    <string name="cancel">Cancel</string>
+    <string name="next">Next</string>
+
+    <string-array name="stepLabels">
+        <item />
+        <item />
+        <item />
+    </string-array>
+
+    <string-array name="sex">
+        <item>Select Gender</item>
+        <item>MALE</item>
+        <item>FEMALE</item>
+        <item>TRANSGENDER</item>
+    </string-array>
+
+    <string-array name="Religion">
+        <item>Religion</item>
+        <item>HINDU</item>
+        <item>MUSLIM</item>
+        <item>CHRISTIAN</item>
+        <item>SIKH</item>
+        <item>BUDDHIST</item>
+        <item>JAIN</item>
+        <item>OTHER</item>
+    </string-array>
+
+    <string-array name="Nationality">
+        <item>Nationality</item>
+        <item>INDIAN</item>
+        <item>FOREING</item>
+    </string-array>
+
+    <string-array name="Marital_Status">
+        <item>Marital Status </item>
+        <item>UNMARRIED</item>
+        <item>MARRIED</item>
+    </string-array>
+
 </resources>
