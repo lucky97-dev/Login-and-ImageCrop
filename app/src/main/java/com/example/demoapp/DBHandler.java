@@ -75,10 +75,14 @@ public class DBHandler {
         private static final String DATABASE_NAME = "myDatabase";
         private static final String TABLE_NAME = "user";
         private static final String TABLE_NAME2 = "user_image";
+        private static final String TABLE_NAME_3 = "user_details";
         private static final int DATABASE_Version = 1;
         private static final String CREATE_TABLE = "CREATE TABLE "+TABLE_NAME+
                 " ( id INTEGER PRIMARY KEY AUTOINCREMENT, user_name VARCHAR(50),user_mobile VARCHAR(15),email_id VARCHAR(25), password VARCHAR(20));";
         private static final String CREATE_TABLE2 = "CREATE TABLE "+TABLE_NAME2+ "( id INTEGER PRIMARY KEY AUTOINCREMENT,user_id VARCHAR(20) , image BLOB);";
+        private static final String CREATE_TABLE_3 = "CREATE TABLE "+TABLE_NAME_3+ "( id INTEGER,state VARCHAR(20) ,dist VARCHAR(20) ,village_present VARCHAR(20)" +
+                ",post_present VARCHAR(20) ,police_present VARCHAR(20) ,pin_present VARCHAR(20) ,father_name VARCHAR(20) ,mother_name VARCHAR(20),gender VARCHAR(10),marital_status VARCHAR(10)" +
+                ",hobbies VARCHAR(100));";
         private static final String DROP_TABLE ="DROP TABLE IF EXISTS "+TABLE_NAME;
         private static final String DROP_TABLE2 ="DROP TABLE IF EXISTS "+TABLE_NAME2;
 

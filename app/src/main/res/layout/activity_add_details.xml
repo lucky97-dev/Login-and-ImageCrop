@@ -252,7 +252,7 @@
                                 android:text="Gender"/>
 
                             <RadioGroup
-                                android:id="@+id/textMotherTongue"
+                                android:id="@+id/gender"
                                 android:layout_width="match_parent"
                                 android:layout_height="48dp"
                                 android:layout_margin="5dp"
@@ -260,6 +260,7 @@
                                 android:orientation="horizontal">
 
                                 <RadioButton
+                                    android:id="@+id/male"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
@@ -267,6 +268,7 @@
                                     android:text="Male"/>
 
                                 <RadioButton
+                                    android:id="@+id/female"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
@@ -281,6 +283,7 @@
                                 android:text="Marital Status"/>
 
                             <RadioGroup
+                                android:id="@+id/marital_status"
                                 android:layout_width="match_parent"
                                 android:layout_height="48dp"
                                 android:layout_margin="5dp"
@@ -288,6 +291,7 @@
                                 android:orientation="horizontal">
 
                                 <RadioButton
+                                    android:id="@+id/married"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
@@ -295,6 +299,7 @@
                                     android:text="Married"/>
 
                                 <RadioButton
+                                    android:id="@+id/unmarried"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
