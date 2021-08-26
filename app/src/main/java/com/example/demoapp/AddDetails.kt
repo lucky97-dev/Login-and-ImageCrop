@@ -16,6 +16,9 @@ class AddDetails : AppCompatActivity() {
     lateinit var dist: Spinner
     var state_name=""
     var dist_name=""
+    var allHobbies = ""
+    var gender_name = ""
+    var marital_status_string = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_details)
