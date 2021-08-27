@@ -14,20 +14,48 @@ class AddDetails : AppCompatActivity() {
     lateinit var cancelButton: Button
     lateinit var state: Spinner
     lateinit var dist: Spinner
+    lateinit var villagePresent: EditText
+    lateinit var postPresent: EditText
+    lateinit var policePresent: EditText
+    lateinit var pinPresent: EditText
+    lateinit var textFatherName: EditText
+    lateinit var textMotherName: EditText
+    lateinit var chkReading: CheckBox
+    lateinit var chkTelevision: CheckBox
+    lateinit var chkMusic: CheckBox
+    lateinit var chkGames: CheckBox
+    lateinit var chkFishing: CheckBox
+    lateinit var chkEtc: CheckBox
+    lateinit var sharedPreference : sharedPreference
+
     var state_name=""
     var dist_name=""
     var allHobbies = ""
     var gender_name = ""
     var marital_status_string = ""
+    lateinit var dbHandler : DBHandler
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_details)
+        sharedPreference = sharedPreference(this)
         saveButton = findViewById<Button>(R.id.saveButton)
         cancelButton = findViewById<Button>(R.id.cancelButton)
         state = findViewById<Spinner>(R.id.state)
         dist = findViewById<Spinner>(R.id.dist)
         stepperIndicator = findViewById<StepperIndicator>(R.id.stepper_indicator)
-        infoDetailsHeader = findViewById<TextView>(R.id.infoDetailsHeader)
+        infoDetailsHeader = findViewById(R.id.infoDetailsHeader)
+        villagePresent = findViewById(R.id.village_Present)
+        postPresent = findViewById(R.id.post_Present)
+        policePresent = findViewById(R.id.police_Present)
+        pinPresent = findViewById(R.id.pin_Present)
+        textFatherName = findViewById(R.id.textFatherName)
+        textMotherName = findViewById(R.id.textMotherName)
+        chkReading = findViewById(R.id.chkReading)
+        chkTelevision = findViewById(R.id.chkTelevision)
+        chkMusic = findViewById(R.id.chkMusic)
+        chkGames = findViewById(R.id.chkGames)
+        chkFishing = findViewById(R.id.chkFishing)
+        chkEtc = findViewById(R.id.chkEtc)
 
         state.onItemSelectedListener =
             object : AdapterView.OnItemSelectedListener { override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
@@ -63,6 +91,22 @@ class AddDetails : AppCompatActivity() {
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {}
             }
+        val mGender = findViewById<RadioGroup>(R.id.gender)
+        mGender.setOnCheckedChangeListener { group: RadioGroup?, checkedId: Int ->
+            if (checkedId == R.id.male) {
+                gender_name = "Male"
+            } else if (checkedId == R.id.female) {
+                gender_name = "Female"
+            }
+        }
+        val marital_status = findViewById<RadioGroup>(R.id.marital_status)
+        marital_status.setOnCheckedChangeListener { group: RadioGroup?, checkedId: Int ->
+            if (checkedId == R.id.married) {
+                marital_status_string = "Married"
+            } else if (checkedId == R.id.unmarried) {
+                marital_status_string = "Unmarried"
+            }
+        }
 
         saveButton.setOnClickListener {
                 if(stepperIndicator.currentStep==0) {
@@ -85,6 +129,28 @@ class AddDetails : AppCompatActivity() {
                     findViewById<View>(R.id.layoutAddress).visibility = View.GONE
                     findViewById<View>(R.id.hobbies).visibility = View.GONE
                     findViewById<View>(R.id.saveSuccessfully).visibility = View.VISIBLE
+                    var msg = ""
+                    if(chkReading.isChecked)
+                        msg += " , Reading"
+                    if(chkTelevision.isChecked)
+                        msg = "$msg , Television"
+                    if(chkMusic.isChecked)
+                        msg = "$msg , Music"
+                    if(chkGames.isChecked)
+                        msg += " , Video Games"
+                    if(chkFishing.isChecked)
+                        msg = "$msg , Fishing"
+                    if(chkEtc.isChecked)
+                        msg += " , Etc"
+                    dbHandler.setUserDetails(sharedPreference.id,state_name,dist_name,
+                        villagePresent.text.toString(),
+                        postPresent.text.toString(),
+                        policePresent.text.toString(),
+                        pinPresent.text.toString(),
+                        textFatherName.text.toString(),
+                        textMotherName.text.toString(),
+                        gender_name,marital_status_string,msg
+                    )
                     super.onBackPressed()
                 }
 

@@ -39,6 +39,35 @@ public class DBHandler {
         }
 
     }
+
+    public void setUserDetails(String id,String state_name, String dist_name,
+                               String villagePresent, String postPresent,
+                               String policePresent, String pinPresent,
+                               String textFatherName, String textMotherName,
+                               String gender_name,String marital_status_string, String msg) {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("id", id);
+        contentValues.put("state",state_name);
+        contentValues.put("dist",dist_name);
+        contentValues.put("village_present",villagePresent);
+        contentValues.put("post_present",postPresent);
+        contentValues.put("police_present",policePresent);
+        contentValues.put("pin_present",pinPresent);
+        contentValues.put("father_name",textFatherName);
+        contentValues.put("mother_name",textMotherName);
+        contentValues.put("gender",gender_name);
+        contentValues.put("marital_status",marital_status_string);
+        contentValues.put("hobbies",msg);
+
+        String[] whereArgs= {id};
+        int count =db.update(dbHelper.TABLE_NAME_3,contentValues, "id = ?",whereArgs );
+        if(count <= 0) {
+            long a = db.insert(dbHelper.TABLE_NAME_3, null, contentValues);
+        }
+
+    }
+
     public Bitmap getImage(String id) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         Cursor mCount= db.rawQuery("select * from " + dbHelper.TABLE_NAME2 + "  where user_id = " + id  , null);
@@ -81,10 +110,12 @@ public class DBHandler {
                 " ( id INTEGER PRIMARY KEY AUTOINCREMENT, user_name VARCHAR(50),user_mobile VARCHAR(15),email_id VARCHAR(25), password VARCHAR(20));";
         private static final String CREATE_TABLE2 = "CREATE TABLE "+TABLE_NAME2+ "( id INTEGER PRIMARY KEY AUTOINCREMENT,user_id VARCHAR(20) , image BLOB);";
         private static final String CREATE_TABLE_3 = "CREATE TABLE "+TABLE_NAME_3+ "( id INTEGER,state VARCHAR(20) ,dist VARCHAR(20) ,village_present VARCHAR(20)" +
-                ",post_present VARCHAR(20) ,police_present VARCHAR(20) ,pin_present VARCHAR(20) ,father_name VARCHAR(20) ,mother_name VARCHAR(20),gender VARCHAR(10),marital_status VARCHAR(10)" +
+                ",post_present VARCHAR(20) ,police_present VARCHAR(20) ,pin_present VARCHAR(20) ,father_name VARCHAR(20) ,mother_name VARCHAR(20)," +
+                "gender VARCHAR(10),marital_status VARCHAR(10)" +
                 ",hobbies VARCHAR(100));";
         private static final String DROP_TABLE ="DROP TABLE IF EXISTS "+TABLE_NAME;
         private static final String DROP_TABLE2 ="DROP TABLE IF EXISTS "+TABLE_NAME2;
+        private static final String DROP_TABLE_3 ="DROP TABLE IF EXISTS "+TABLE_NAME_3;
 
         private Context context;
 
@@ -97,6 +128,7 @@ public class DBHandler {
             try {
                 db.execSQL(CREATE_TABLE);
                 db.execSQL(CREATE_TABLE2);
+                db.execSQL(CREATE_TABLE_3);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -107,6 +139,7 @@ public class DBHandler {
             try {
                 db.execSQL(DROP_TABLE);
                 db.execSQL(DROP_TABLE2);
+                db.execSQL(DROP_TABLE_3);
                 onCreate(db);
             } catch (Exception e) {
                 e.printStackTrace();

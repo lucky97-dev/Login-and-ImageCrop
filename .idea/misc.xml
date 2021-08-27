@@ -13,7 +13,7 @@
         <entry key="app/src/main/res/drawable/login_edit_box.xml" value="0.26944444444444443" />
         <entry key="app/src/main/res/drawable/new_login_gradients.xml" value="0.26944444444444443" />
         <entry key="app/src/main/res/drawable/spinner_bg.xml" value="0.25885416666666666" />
-        <entry key="app/src/main/res/layout/activity_add_details.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_add_details.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.30512820512820515" />
         <entry key="app/src/main/res/layout/activity_registration.xml" value="0.2907692307692308" />
