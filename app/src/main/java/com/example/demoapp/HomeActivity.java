@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -30,6 +31,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeActivity extends AppCompatActivity {
     TextView userName,userEmailId,userMobile;
+
+     TextView state, districts,vill,post,police,pin,textFatherName,textMotherName,gender, marital_status,hobbies;
     sharedPreference sharedPreference;
     CircleImageView userImage;
     DBHandler handler;
@@ -45,7 +48,19 @@ public class HomeActivity extends AppCompatActivity {
         userEmailId = findViewById(R.id.userEmailId);
         userMobile = findViewById(R.id.userMobile);
         addDetails = findViewById(R.id.addDetails);
+        state = findViewById(R.id.state);
+        districts = findViewById(R.id.districts);
+        vill = findViewById(R.id.vill);
+        post = findViewById(R.id.post);
+        police = findViewById(R.id.police);
+        pin = findViewById(R.id.pin);
+        textFatherName = findViewById(R.id.textFatherName);
+        textMotherName = findViewById(R.id.textMotherName);
+        gender = findViewById(R.id.gender);
+        marital_status = findViewById(R.id.marital_status);
+        hobbies = findViewById(R.id.hobbies);
         handler = new DBHandler(this);
+        userDetails();
         sharedPreference = new sharedPreference(this);
         userName.setText(sharedPreference.getName());
         userEmailId.setText(sharedPreference.getEmail());
@@ -65,6 +80,29 @@ public class HomeActivity extends AppCompatActivity {
 
         userImage.setOnClickListener(v -> CropImage.activity(null).setGuidelines(CropImageView.Guidelines.ON).start( HomeActivity.this));
     }
+    public void userDetails() {
+        Cursor cursor = handler.getUserDetails(sharedPreference.getId());
+        while (cursor.moveToNext()) {
+            state.setText(cursor.getString(cursor.getColumnIndex("state")));
+            districts.setText(cursor.getString(cursor.getColumnIndex("dist")));
+            vill.setText(cursor.getString(cursor.getColumnIndex("village_present")));
+            post.setText(cursor.getString(cursor.getColumnIndex("post_present")));
+            police.setText(cursor.getString(cursor.getColumnIndex("police_present")));
+            pin.setText(cursor.getString(cursor.getColumnIndex("pin_present")));
+            textFatherName.setText(cursor.getString(cursor.getColumnIndex("father_name")));
+            textMotherName.setText(cursor.getString(cursor.getColumnIndex("mother_name")));
+            gender.setText(cursor.getString(cursor.getColumnIndex("gender")));
+            marital_status.setText(cursor.getString(cursor.getColumnIndex("marital_status")));
+            hobbies.setText(cursor.getString(cursor.getColumnIndex("hobbies")));
+        }
+    }
+
+    @Override
+    protected void onRestart() {
+        userDetails();
+        super.onRestart();
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         String imageString;

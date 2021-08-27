@@ -37,6 +37,7 @@ class AddDetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_details)
+        dbHandler = DBHandler(this)
         sharedPreference = sharedPreference(this)
         saveButton = findViewById<Button>(R.id.saveButton)
         cancelButton = findViewById<Button>(R.id.cancelButton)

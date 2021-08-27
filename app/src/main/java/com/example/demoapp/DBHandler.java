@@ -80,6 +80,12 @@ public class DBHandler {
         return null;
     }
 
+    public Cursor getUserDetails(String id) {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        Cursor mCount= db.rawQuery("select * from " + dbHelper.TABLE_NAME_3 + "  where id = " + id  , null);
+        return mCount;
+    }
+
     public int checkUserData(String email,String pass) {
         sharedPreference sharedPreference = new sharedPreference(dbHelper.context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
