@@ -60,8 +60,8 @@ public class HomeActivity extends AppCompatActivity {
         marital_status = findViewById(R.id.marital_status);
         hobbies = findViewById(R.id.hobbies);
         handler = new DBHandler(this);
-        userDetails();
         sharedPreference = new sharedPreference(this);
+        userDetails();
         userName.setText(sharedPreference.getName());
         userEmailId.setText(sharedPreference.getEmail());
         userMobile.setText(sharedPreference.getMobile());
