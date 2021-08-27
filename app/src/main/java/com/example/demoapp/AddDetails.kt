@@ -170,7 +170,7 @@ class AddDetails : AppCompatActivity() {
                 findViewById<View>(R.id.hobbies).visibility = View.GONE
                 cancelButton.text = "Back"
                 saveButton.text = "Next"
-                infoDetailsHeader.text = "Personal Info"
+                infoDetailsHeader.text = "Address"
             }
 
         }
